@@ -1,6 +1,6 @@
 ## SQL Queries
 
-The `sql_queries.sql` file is a learning resource showcasing different SQL `JOIN` operations and data manipulation techniques. It provides commented examples illustrating how to:
+The `sql_queries.sql` in [sql_queries.sql](sql_queries.sql) file is a learning resource showcasing different SQL `JOIN` operations and data manipulation techniques. It provides commented examples illustrating how to:
 
 * Perform `INNER JOIN`, `LEFT JOIN`, `FULL OUTER JOIN`, and `CROSS JOIN` to combine data based on the `product_id`.
 * Filter data using `WHERE` clauses for specific conditions.
