@@ -8,4 +8,13 @@ The `sql_queries.sql` in [sql_queries.sql](sql_queries.sql) file is a learning r
 * Aggregate data with `GROUP BY` and `COUNT`.
 * Handle `NULL` values for better presentation using `COALESCE`.
 
-By examining these queries, you can gain a better understanding of how to retrieve and analyze data from relational databases involving transactions and inventory.
+## SQL Subqueries:
+
+The `sub_queries.sql` in [sub_queries.sql](sub_queries.sql) file is a learning resource showcasing sub querying operations and techniques. It provides commented examples illustrating how to:
+
+* Filter based on scalar subqueries:
+* Filter based on column subqueries (using `IN`):
+* Filter based on row subqueries (using `=`):
+* Filter based on table subqueries (in `FROM` clause):
+* Filter based on existence (`EXISTS`)
+* Filter data based on comparisons with the results of aggregate functions (like `AVG`, `MAX`, `MIN`, `SUM`, `COUNT`) calculated within a subquery. 
