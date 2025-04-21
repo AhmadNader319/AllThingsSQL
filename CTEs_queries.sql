@@ -1,4 +1,4 @@
--- CTEs Practice
+-- CTEs Practice (statements -> 1 to 5)
 
 -- Statement1 : Write a simple CTE that lists all employees and their department.
 WITH EmployeeDepartments AS (
@@ -46,24 +46,30 @@ FROM RankedSalaries
 WHERE salary_rank = 2
 LIMIT 1;
 
--- Statement5 : Write a recursive CTE to list all the managers in the hierarchy
--- (employees who have at least one direct report). Include their name and employee ID.
--- (Hint: You might need to adapt the previous recursive CTE.)
 
 
--- Complex Level
-
--- Statement6 : Write a recursive CTE to display the entire management chain for each employee,
--- from themselves up to the top manager. The output should include the employee's name and a concatenated string
--- showing their chain of command (e.g., "Grace -> Frank -> Charlie -> Alice").
-
-
--- Statement7 : Write a CTE that finds all employees who earn more than the average salary of their direct manager.
--- If an employee has no manager, compare their salary to the average salary of all employees.
-
-
-
-
-
--- Statement8 : Write a recursive CTE to calculate the total number of employees in the subtree managed by each employee
--- (including themselves). The output should include the manager's name and the count of their direct and indirect reports.
+-- Statement5 :Find the downward recommendation chain for member ID 1: that is, the members they recommended, the members those members recommended, and so on. Return member ID and name, and order by ascending member id.
+WITH RECURSIVE upward_recommendation AS (
+    SELECT
+        m.memid, m.firstname, m.surname, m.recommendedby
+    FROM members AS m
+    WHERE
+        m.memid = 27
+    UNION ALL
+    SELECT
+        m.memid, m.firstname, m.surname, m.recommendedby
+    FROM
+        members AS m
+    INNER JOIN
+        upward_recommendation AS ur
+    ON
+        m.memid = ur.recommendedby
+)
+SELECT
+    ur.memid, ur.firstname, ur.surname
+FROM
+    upward_recommendation AS ur
+where
+    ur.memid <> 27
+ORDER BY
+    ur.memid DESC;
