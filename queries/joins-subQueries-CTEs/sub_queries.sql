@@ -1,10 +1,3 @@
--- Script to perform various queries on customer, salesman, and orders tables
--- The SQL queries exhibit increasing complexity by nesting subqueries, incorporating aggregate
--- functions within subqueries (like AVG and MAX), and using different subquery operators such as =,
--- IN, and EXISTS to perform sophisticated filtering based on related data. Furthermore, the
--- introduction of JOIN operations combines data from multiple tables based on relationships 
--- defined in subqueries or direct conditions, enabling more intricate data retrieval and analysis.
-
 -- Display Customers with ID Below 2001 Under Salesperson Mc Lyon
 SELECT *
 FROM customer
