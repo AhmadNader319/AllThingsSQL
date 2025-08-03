@@ -16,7 +16,7 @@ CREATE TABLE Ships (
 
 CREATE TABLE Battles (
     name VARCHAR(20) PRIMARY KEY,
-    [date] DATETIME
+    `date` DATETIME
 );
 
 CREATE TABLE Outcomes (

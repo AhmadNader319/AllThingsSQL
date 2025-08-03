@@ -11,7 +11,7 @@ CREATE TABLE pc (
     ram SMALLINT NOT NULL,
     hd REAL NOT NULL,
     cd VARCHAR(10) NOT NULL,
-    price MONEY,
+    price DECIMAL(8,4),
     CONSTRAINT FK_pc_product FOREIGN KEY (model) REFERENCES product(model)
 );
 
@@ -21,7 +21,7 @@ CREATE TABLE laptop (
     speed SMALLINT NOT NULL,
     ram SMALLINT NOT NULL,
     hd REAL NOT NULL,
-    price MONEY,
+    price DECIMAL(8,4),
     screen TINYINT NOT NULL,
     CONSTRAINT FK_laptop_product FOREIGN KEY (model) REFERENCES product(model)
 );
@@ -31,6 +31,6 @@ CREATE TABLE printer (
     model VARCHAR(50) NOT NULL,
     color CHAR(1) NOT NULL,
     type VARCHAR(10) NOT NULL,
-    price MONEY,
+    price DECIMAL(8,4),
     CONSTRAINT FK_printer_product FOREIGN KEY (model) REFERENCES product(model)
 );
